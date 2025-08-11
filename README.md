@@ -86,11 +86,14 @@ Weighted Average = (543687×10 + 789123×10) / (10 + 10) = 666405.0
 ## 📊 Real Performance Data
 ```
 Test Cases on 10 Million+ Record Dataset:
-Test 1: 1.63s (cache miss) → subsequent identical queries: 0.0000s
-Test 2: 4.23s (cache miss) → demonstrates streaming efficiency  
-Test 3: 0.0000s (cache hit) → shows caching effectiveness
-Test 4: 0.0000s (cache hit) → consistent cache performance
-Test 5: 6.72s (worst case: matches near end of dataset)
+============================================================
+Test     Result       Time (s)   Memory (MB)  Before (MB)  After (MB)
+------------------------------------------------------------
+Test 1   543687.0     1.6341     2.770        1379.617     1382.387    
+Test 2   666172.0     4.2195     -0.082       1382.387     1382.305    
+Test 3   714033.7     0.0000     0.000        1382.305     1382.305    
+Test 4   543687.0     0.0000     0.000        1382.305     1382.305    
+Test 5   396519.0     6.7825     0.016        1382.305     1382.320 
 ```
 
 ## 📊 Test Dataset
